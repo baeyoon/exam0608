@@ -28,9 +28,8 @@ def category_new(request):
     return render(request, 'blog/category_new.html', {'form' : form})
 
 def shop_detail(request, pk):
-    category = category.objects.get(pk=pk)
     shop = Shop.objects.get(pk=category_pk)
-    return render(request, 'blog/shop_detail.html', {'category' : category, 'shop' : shop})
+    return render(request, 'blog/shop_detail.html', {'shop' : shop})
 
 #def category_edit(request):
     if request.method == "POST":
