@@ -7,6 +7,12 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:category_detail', args=[self.pk])
+
 class Shop(models.Model):
     title = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
@@ -16,6 +22,12 @@ class Shop(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:shop_detail', args=[self.pk])
+
 class Review(models.Model):
     title = models.CharField(max_length=100)
     username = models.CharField(max_length=15)
@@ -23,5 +35,3 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-def __str__(self):
-    return self.title
