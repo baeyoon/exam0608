@@ -14,5 +14,7 @@ class ShopAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display= ['title', 'username', 'created_at']
 
-admin.site.register(Post, PostAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Shop, ShopAdmin)
+admin.site.register(Review, ReviewAdmin)
 
